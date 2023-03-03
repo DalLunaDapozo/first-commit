@@ -1,0 +1,91 @@
+[gd_scene load_steps=7 format=3 uid="uid://bmdpxn3u88o0d"]
+
+[ext_resource type="PackedScene" uid="uid://di46cw37yupbv" path="res://fan.fbx" id="1_c1251"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_16vny"]
+albedo_color = Color(0.384314, 0.384314, 0.384314, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3oxmt"]
+albedo_color = Color(0.403922, 0.403922, 0.403922, 1)
+
+[sub_resource type="Animation" id="Animation_ky3yu"]
+resource_name = "turn"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RootNode/Simple_Ceiling_Fan:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0.698132, 0), Vector3(0, 1.39626, 0), Vector3(0, 2.0944, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RootNode/Simple_Ceiling_Fan:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
+}
+
+[sub_resource type="Animation" id="Animation_jaok4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RootNode/Simple_Ceiling_Fan:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RootNode/Simple_Ceiling_Fan:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_eccdm"]
+_data = {
+"RESET": SubResource("Animation_jaok4"),
+"turn": SubResource("Animation_ky3yu")
+}
+
+[node name="fan" instance=ExtResource("1_c1251")]
+
+[node name="wing" parent="RootNode/Simple_Ceiling_Fan/wings/wing_Instance_1" index="0"]
+material_override = SubResource("StandardMaterial3D_16vny")
+
+[node name="wing_2" parent="RootNode/Simple_Ceiling_Fan/wings/wing_Instance" index="0"]
+material_override = SubResource("StandardMaterial3D_16vny")
+
+[node name="wing_4" parent="RootNode/Simple_Ceiling_Fan/wings/wing_3" index="0"]
+material_override = SubResource("StandardMaterial3D_16vny")
+
+[node name="body" parent="RootNode/Simple_Ceiling_Fan" index="2"]
+material_override = SubResource("StandardMaterial3D_3oxmt")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="1"]
+autoplay = "turn"
+libraries = {
+"": SubResource("AnimationLibrary_eccdm")
+}

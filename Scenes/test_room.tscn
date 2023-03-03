@@ -1,0 +1,268 @@
+[gd_scene load_steps=19 format=3 uid="uid://dxl0x4g7bhcqj"]
+
+[ext_resource type="Material" uid="uid://blypbnkg1vad8" path="res://Materials/Floor_mat.tres" id="1_6x57q"]
+[ext_resource type="Material" uid="uid://ce42rx8j6un" path="res://Materials/Wall.tres" id="2_0r1fv"]
+[ext_resource type="Texture2D" uid="uid://b44fyckuxkbar" path="res://Sprites/Hotel_door.png" id="3_7txdw"]
+[ext_resource type="Texture2D" uid="uid://c4c8xvhkdl0xd" path="res://Sprites/Desk.png" id="4_0pysu"]
+[ext_resource type="Texture2D" uid="uid://bajgx36fwxpik" path="res://Sprites/Hotel_props.png" id="4_21raf"]
+[ext_resource type="Texture2D" uid="uid://c0x0r0iw2ffea" path="res://Sprites/Hotelero-Sheet.png" id="5_hd8kf"]
+[ext_resource type="PackedScene" uid="uid://bmdpxn3u88o0d" path="res://Scenes/fan.tscn" id="6_malcx"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_idesu"]
+material = ExtResource("1_6x57q")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_54d0d"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_i51np"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j0uhm"]
+albedo_color = Color(0.564706, 0.564706, 0.564706, 1)
+albedo_texture = ExtResource("3_7txdw")
+metallic_specular = 0.0
+uv1_scale = Vector3(2.998, 1.994, 2.461)
+texture_filter = 0
+
+[sub_resource type="BoxMesh" id="BoxMesh_urqfy"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_y2k8y"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_420v7"]
+
+[sub_resource type="Animation" id="Animation_ivnir"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_t5epr"]
+resource_name = "hotel_manager_idle"
+length = 1.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cg8vg"]
+_data = {
+"RESET": SubResource("Animation_ivnir"),
+"hotel_manager_idle": SubResource("Animation_t5epr")
+}
+
+[sub_resource type="BoxMesh" id="BoxMesh_pyay1"]
+
+[node name="TestRoom" type="Node3D"]
+process_mode = 3
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+
+[node name="Floor" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+material_override = ExtResource("1_6x57q")
+mesh = SubResource("PlaneMesh_idesu")
+
+[node name="Roof" type="MeshInstance3D" parent="."]
+transform = Transform3D(4.37114e-08, -3.82137e-15, 1, -8.74228e-08, -1, 0, 1, -8.74228e-08, -4.37114e-08, 0, 1.12854, 0)
+material_override = SubResource("StandardMaterial3D_54d0d")
+mesh = SubResource("PlaneMesh_idesu")
+
+[node name="Wall" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.5, 0)
+
+[node name="Mesh" type="MeshInstance3D" parent="Wall"]
+transform = Transform3D(-3.0598e-08, 0.5, 0, -0.7, -2.18557e-08, 0, 0, 0, 1, 0, 0, 0)
+material_override = ExtResource("2_0r1fv")
+mesh = SubResource("PlaneMesh_idesu")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -1, 0, 0)
+shape = SubResource("BoxShape3D_i51np")
+
+[node name="Wall2" type="StaticBody3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0.5, 1)
+
+[node name="Mesh" type="MeshInstance3D" parent="Wall2"]
+transform = Transform3D(-3.0598e-08, 0.5, 0, -0.7, -2.18557e-08, 0, 0, 0, 1, 0, 0, 0)
+material_override = ExtResource("2_0r1fv")
+mesh = SubResource("PlaneMesh_idesu")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall2"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -1, 0, 0)
+shape = SubResource("BoxShape3D_i51np")
+
+[node name="Wall3" type="StaticBody3D" parent="."]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 0, 0.5, -1)
+
+[node name="Mesh" type="MeshInstance3D" parent="Wall3"]
+transform = Transform3D(-3.0598e-08, 0.5, 0, -0.7, -2.18557e-08, 0, 0, 0, 1, 0, 0, 0)
+material_override = ExtResource("2_0r1fv")
+mesh = SubResource("PlaneMesh_idesu")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall3"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -1, 0, 0)
+shape = SubResource("BoxShape3D_i51np")
+
+[node name="Door" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.495308, 0.5)
+
+[node name="Mesh" type="MeshInstance3D" parent="Door"]
+transform = Transform3D(0.343, 0, 0, 0, 0.553, 0, 0, 0, 0.03, 0, -0.221, 0.510754)
+material_override = SubResource("StandardMaterial3D_j0uhm")
+mesh = SubResource("BoxMesh_urqfy")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Door"]
+transform = Transform3D(0.318, 0, 0, 0, 0.318, 0, 0, 0, 0.318, 0, -0.437, 0.642)
+shape = SubResource("BoxShape3D_y2k8y")
+
+[node name="Desk" type="Sprite3D" parent="."]
+transform = Transform3D(-4.17007e-08, 0, -0.7, 0, 0.506, 0, 0.954, 0, -3.0598e-08, -0.0478941, 0.148804, -0.445513)
+lod_bias = 0.001
+shaded = true
+alpha_cut = 2
+alpha_scissor_threshold = 0.0
+texture_filter = 0
+texture = ExtResource("4_0pysu")
+region_rect = Rect2(33, 62, 107, 60)
+
+[node name="Collision_desk" type="StaticBody3D" parent="Desk"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.0150319, -0.300192, 0.699123)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Desk/Collision_desk"]
+transform = Transform3D(1.421, 0, 0, 0, 1.421, 0, 1.42109e-14, 0, 1.421, 0.0213022, 0, -0.148946)
+shape = SubResource("BoxShape3D_420v7")
+
+[node name="Computer" type="Sprite3D" parent="."]
+transform = Transform3D(-2.59209e-08, 0, -0.593, 0, 0.593, 0, 0.593, 0, -2.59209e-08, -0.0947675, 0.348441, -0.325525)
+shaded = true
+alpha_cut = 2
+texture_filter = 0
+texture = ExtResource("4_21raf")
+region_enabled = true
+region_rect = Rect2(98, 43, 33, 18)
+
+[node name="Frame" type="Sprite3D" parent="."]
+transform = Transform3D(-2.59209e-08, 0, -0.593, 0, 0.593, 0, 0.593, 0, -2.59209e-08, -0.826, 0.6, 0)
+shaded = true
+texture_filter = 0
+texture = ExtResource("4_21raf")
+region_enabled = true
+region_rect = Rect2(64, 13, 29, 35)
+
+[node name="Plant" type="Sprite3D" parent="."]
+transform = Transform3D(-2.59209e-08, 0, -0.593, 0, 0.593, 0, 0.593, 0, -2.59209e-08, -0.863825, 0.181589, 0.890415)
+shaded = true
+texture_filter = 0
+texture = ExtResource("4_21raf")
+region_enabled = true
+region_rect = Rect2(200, 61, 29, 61)
+
+[node name="Collision_plant" type="StaticBody3D" parent="Plant"]
+transform = Transform3D(-7.37123e-08, 0, 1.68634, 0, 1.68634, 0, -1.68634, 0, -7.37123e-08, 0.0515811, -0.306221, 0.130861)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Plant/Collision_plant"]
+transform = Transform3D(0.222, 0, 0, 0, 0.222, 0, 0, 0, 0.222, 0, 0, 0)
+shape = SubResource("BoxShape3D_420v7")
+
+[node name="Frame2" type="Sprite3D" parent="."]
+transform = Transform3D(-0.593, 0, 5.18417e-08, 0, 0.593, 0, -5.18417e-08, 0, -0.593, -0.392332, 0.58526, -0.990623)
+shaded = true
+texture_filter = 0
+texture = ExtResource("4_21raf")
+region_enabled = true
+region_rect = Rect2(64, 13, 29, 35)
+
+[node name="Hotel_Manager" type="Sprite3D" parent="."]
+transform = Transform3D(-2.27299e-08, 0, 0.52, 0, 0.52, 0, -0.52, 0, -2.27299e-08, -0.110916, 0.374872, -0.0975484)
+shaded = true
+alpha_cut = 2
+texture_filter = 0
+texture = ExtResource("5_hd8kf")
+hframes = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Hotel_Manager"]
+autoplay = "hotel_manager_idle"
+libraries = {
+"": SubResource("AnimationLibrary_cg8vg")
+}
+
+[node name="Lamp" type="Sprite3D" parent="."]
+transform = Transform3D(-2.94615e-08, 0, 0.674, 0, 0.674, 0, -0.674, 0, -2.94615e-08, -0.914744, 0.564178, 0.5)
+texture_filter = 0
+texture = ExtResource("4_21raf")
+region_enabled = true
+region_rect = Rect2(34, 11, 17, 21)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Lamp"]
+transform = Transform3D(0.74184, 0, 0, 0, 0.74184, 0, 0, 0, 0.74184, 0.000434816, 0.0490676, -0.0141404)
+light_energy = 0.263
+shadow_enabled = true
+shadow_bias = 0.001
+shadow_normal_bias = 0.0
+shadow_blur = 10.0
+
+[node name="mesh" type="MeshInstance3D" parent="Lamp"]
+transform = Transform3D(0.038, 0, 0, 0, 0.038, 0, 0, 0, 0.038, 0, -0.0311859, -0.0679597)
+lod_bias = 1.018
+mesh = SubResource("BoxMesh_pyay1")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Lamp"]
+transform = Transform3D(-0.74184, -4.81957e-08, 4.33956e-08, 0, 0.496388, 0.551294, -6.48537e-08, 0.551294, -0.496388, 0, 0.0453019, 0.0108615)
+light_energy = 10.836
+shadow_enabled = true
+shadow_bias = 0.001
+
+[node name="Lamp2" type="Sprite3D" parent="."]
+transform = Transform3D(-2.94615e-08, 0, 0.674, 0, 0.674, 0, -0.674, 0, -2.94615e-08, -0.915, 0.564, -0.5)
+texture_filter = 0
+texture = ExtResource("4_21raf")
+region_enabled = true
+region_rect = Rect2(34, 11, 17, 21)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Lamp2"]
+transform = Transform3D(0.74184, 0, 0, 0, 0.74184, 0, 0, 0, 0.74184, 0.000434816, 0.0490676, -0.0141404)
+light_energy = 0.263
+shadow_enabled = true
+shadow_bias = 0.001
+shadow_normal_bias = 0.0
+shadow_blur = 10.0
+
+[node name="mesh" type="MeshInstance3D" parent="Lamp2"]
+transform = Transform3D(0.038, 0, 0, 0, 0.038, 0, 0, 0, 0.038, 0, -0.0311859, -0.0679597)
+lod_bias = 1.018
+mesh = SubResource("BoxMesh_pyay1")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Lamp2"]
+transform = Transform3D(-0.74184, -4.81957e-08, 4.33956e-08, 0, 0.496388, 0.551294, -6.48537e-08, 0.551294, -0.496388, 0, 0.0453019, 0.0108615)
+light_energy = 10.836
+shadow_enabled = true
+shadow_bias = 0.0
+
+[node name="fan" parent="." instance=ExtResource("6_malcx")]
+transform = Transform3D(0.489, 0, 0, 0, 0.489, 0, 0, 0, 0.489, 0, -0.269486, 0)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, -2.18557e-08, 0.5, 0, -0.5, -2.18557e-08, -0.233699, 1.09765, -0.0237384)
+light_energy = 0.869
+shadow_enabled = true
+shadow_bias = 0.01
+shadow_blur = 6.738

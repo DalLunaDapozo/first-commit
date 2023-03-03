@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://blypbnkg1vad8"]
+
+[ext_resource type="Texture2D" uid="uid://c43s64kpicwcq" path="res://Sprites/Floor_test.png" id="1_fqdhk"]
+
+[resource]
+albedo_texture = ExtResource("1_fqdhk")
+metallic_specular = 0.0
+uv1_scale = Vector3(3.681, 3.681, 3.681)
+texture_filter = 0
+proximity_fade_distance = 0.0
