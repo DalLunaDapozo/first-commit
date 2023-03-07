@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://dxl0x4g7bhcqj"]
+[gd_scene load_steps=22 format=3 uid="uid://by4g3xjby37eh"]
 
 [ext_resource type="Material" uid="uid://blypbnkg1vad8" path="res://Materials/Floor_mat.tres" id="1_6x57q"]
 [ext_resource type="Material" uid="uid://ce42rx8j6un" path="res://Materials/Wall.tres" id="2_0r1fv"]
@@ -6,7 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://c4c8xvhkdl0xd" path="res://Sprites/Desk.png" id="4_0pysu"]
 [ext_resource type="Texture2D" uid="uid://bajgx36fwxpik" path="res://Sprites/Hotel_props.png" id="4_21raf"]
 [ext_resource type="Texture2D" uid="uid://c0x0r0iw2ffea" path="res://Sprites/Hotelero-Sheet.png" id="5_hd8kf"]
-[ext_resource type="PackedScene" uid="uid://bmdpxn3u88o0d" path="res://Scenes/fan.tscn" id="6_malcx"]
+[ext_resource type="PackedScene" path="res://Scenes/fan.tscn" id="6_malcx"]
+[ext_resource type="Script" path="res://Scripts/dialogue_trigger.gd" id="7_gg2ye"]
+[ext_resource type="Texture2D" uid="uid://dlwcyhqdlrnk3" path="res://Sprites/Exclamation point.png" id="8_ulfwy"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_idesu"]
 material = ExtResource("1_6x57q")
@@ -66,6 +68,8 @@ _data = {
 "RESET": SubResource("Animation_ivnir"),
 "hotel_manager_idle": SubResource("Animation_t5epr")
 }
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7bpwh"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_pyay1"]
 
@@ -205,6 +209,21 @@ libraries = {
 "": SubResource("AnimationLibrary_cg8vg")
 }
 
+[node name="dialogue_trigger" type="Area3D" parent="Hotel_Manager"]
+script = ExtResource("7_gg2ye")
+dialogue_data = "res://Dialogues/test_timeline.dtl"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hotel_Manager/dialogue_trigger"]
+transform = Transform3D(0.357, 0, 0, 0, 0.357, 0, 0, 0, 0.357, -0.47315, -0.592743, -2.98023e-08)
+shape = SubResource("BoxShape3D_7bpwh")
+
+[node name="Exclamation" type="Sprite3D" parent="Hotel_Manager/dialogue_trigger"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0164941, 0.269399, -0.0586197)
+visible = false
+modulate = Color(1, 1, 0.392157, 1)
+alpha_cut = 2
+texture = ExtResource("8_ulfwy")
+
 [node name="Lamp" type="Sprite3D" parent="."]
 transform = Transform3D(-2.94615e-08, 0, 0.674, 0, 0.674, 0, -0.674, 0, -2.94615e-08, -0.914744, 0.564178, 0.5)
 texture_filter = 0
@@ -266,3 +285,6 @@ light_energy = 0.869
 shadow_enabled = true
 shadow_bias = 0.01
 shadow_blur = 6.738
+
+[connection signal="area_entered" from="Hotel_Manager/dialogue_trigger" to="Hotel_Manager/dialogue_trigger" method="_on_area_entered"]
+[connection signal="area_exited" from="Hotel_Manager/dialogue_trigger" to="Hotel_Manager/dialogue_trigger" method="_on_area_exited"]

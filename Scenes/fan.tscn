@@ -1,6 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://bmdpxn3u88o0d"]
+[gd_scene load_steps=7 format=3]
 
-[ext_resource type="PackedScene" uid="uid://di46cw37yupbv" path="res://fan.fbx" id="1_c1251"]
+[ext_resource type="PackedScene" uid="uid://di46cw37yupbv" path="res://Scenes/fan.fbx" id="1_c1251"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_16vny"]
 albedo_color = Color(0.384314, 0.384314, 0.384314, 1)

@@ -1,8 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://cifqwwf6abimd"]
+[gd_scene load_steps=10 format=3 uid="uid://cifqwwf6abimd"]
 
 [ext_resource type="Texture2D" uid="uid://df2w14ojs2asu" path="res://Sprites/Player.png" id="1_okk7x"]
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_xcauv"]
 [ext_resource type="Texture2D" uid="uid://ckxogynsa5v8u" path="res://Sprites/Player_walk-Sheet.png" id="3_0vlnd"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_usd6b"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_sey2i"]
 size = Vector3(0.950352, 1, 1)
@@ -124,6 +126,12 @@ _data = {
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_xcauv")
 SPEED = 0.8
+
+[node name="player_area" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="player_area"]
+transform = Transform3D(0.372, 0, 0, 0, 0.372, 0, 0, 0, 0.372, 0, 0.183749, 0)
+shape = SubResource("BoxShape3D_usd6b")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(0.386, 0, 0, 0, 0.386, 0, 0, 0, 0.386, 0, 0.193099, 0)

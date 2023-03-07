@@ -7,7 +7,7 @@ extends CharacterBody3D
 
 var is_moving := false
 
-func _physics_process(delta):
+func _physics_process(_delta):
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -36,3 +36,4 @@ func _physics_process(delta):
 		_animation_player.play("idle")
 	
 	move_and_slide()
+
