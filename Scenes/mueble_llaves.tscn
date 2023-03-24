@@ -1,0 +1,55 @@
+[gd_scene load_steps=3 format=3 uid="uid://dvqj21lbr1a34"]
+
+[ext_resource type="Material" uid="uid://cofqm88l8ff10" path="res://Materials/wood.tres" id="1_t5uon"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_n54uq"]
+
+[node name="mueble_llaves" type="Node3D"]
+
+[node name="tabla" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.05, 0, 0, 0, 1.5, 0, 0, 0, 1.472, 0, 0, 0)
+material_override = ExtResource("1_t5uon")
+mesh = SubResource("BoxMesh_n54uq")
+
+[node name="tabla2" type="MeshInstance3D" parent="."]
+transform = Transform3D(-2.18557e-09, 0.4, 0, -0.05, -1.74846e-08, 0, 0, 0, 1.4, 0.2, -0.75, 0)
+material_override = ExtResource("1_t5uon")
+mesh = SubResource("BoxMesh_n54uq")
+
+[node name="tabla4" type="MeshInstance3D" parent="."]
+transform = Transform3D(-2.18557e-09, 0.4, -6.77527e-08, 0, -1.74846e-08, -1.55, -0.05, -1.74846e-08, 2.96156e-15, 0.2, 0, 0.731)
+material_override = ExtResource("1_t5uon")
+mesh = SubResource("BoxMesh_n54uq")
+
+[node name="tabla5" type="MeshInstance3D" parent="."]
+transform = Transform3D(-2.18557e-09, 0.4, -6.77527e-08, 0, -1.74846e-08, -1.55, -0.05, -1.74846e-08, 2.96156e-15, 0.2, 0, -0.731)
+material_override = ExtResource("1_t5uon")
+mesh = SubResource("BoxMesh_n54uq")
+
+[node name="tabla3" type="MeshInstance3D" parent="."]
+transform = Transform3D(-2.18557e-09, 0.4, 0, -0.05, -1.74846e-08, 0, 0, 0, 1.466, 0.200335, 0.752205, 0.00695777)
+material_override = ExtResource("1_t5uon")
+gi_lightmap_scale = 1
+mesh = SubResource("BoxMesh_n54uq")
+
+[node name="shadowfix" type="MeshInstance3D" parent="."]
+transform = Transform3D(-2.18557e-09, 0.4, 0, -0.05, -1.74846e-08, 0, 0, 0, 1.4, 0.21473, 0.790603, 0.00695777)
+material_override = ExtResource("1_t5uon")
+cast_shadow = 3
+gi_lightmap_scale = 1
+mesh = SubResource("BoxMesh_n54uq")
+
+[node name="shadowfix2" type="MeshInstance3D" parent="."]
+transform = Transform3D(-2.18557e-09, 0.4, 0, -0.05, -1.74846e-08, 0, 0, 0, 1.4, 0.21473, 0.0411858, 0.00695777)
+material_override = ExtResource("1_t5uon")
+cast_shadow = 3
+gi_lightmap_scale = 1
+mesh = SubResource("BoxMesh_n54uq")
+
+[node name="tabla6" type="MeshInstance3D" parent="."]
+transform = Transform3D(-2.18557e-09, 0.4, 0, -0.05, -1.74846e-08, 0, 0, 0, 1.4, 0.200335, -2.98023e-08, 0.00695777)
+material_override = ExtResource("1_t5uon")
+lod_bias = 0.001
+gi_mode = 2
+gi_lightmap_scale = 1
+mesh = SubResource("BoxMesh_n54uq")

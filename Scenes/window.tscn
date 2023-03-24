@@ -1,0 +1,39 @@
+[gd_scene load_steps=4 format=3 uid="uid://p7yjocu7hh8"]
+
+[ext_resource type="Material" uid="uid://cofqm88l8ff10" path="res://Materials/wood.tres" id="2_7v0wa"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8tlni"]
+transparency = 1
+metallic = 1.0
+metallic_specular = 0.0
+
+[sub_resource type="QuadMesh" id="QuadMesh_lau0a"]
+
+[node name="Wall_window" type="CSGBox3D"]
+transform = Transform3D(-2.18557e-08, 0, -0.01, 0, 0.5, 0, 0.5, 0, -4.37114e-10, -0.999488, 0.578642, 0.000525236)
+material = ExtResource("2_7v0wa")
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
+transform = Transform3D(1, 0, 1.80411e-16, 0, 0.999999, 0, 4.54747e-12, 0, 1, 0, 5.96046e-08, -0.639473)
+operation = 2
+
+[node name="window" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(0.33, 0, -7.47491e-12, 0, 0.207, 0, 0, 0, 10.849, 0, -0.0368151, 0)
+material = ExtResource("2_7v0wa")
+
+[node name="cristal" type="MeshInstance3D" parent="CSGCombiner3D/window"]
+transform = Transform3D(-0.999999, 0, -8.74227e-08, 0, 0.999999, 0, 8.74229e-08, 0, -0.999999, -2.70744e-08, 0, -0.309696)
+material_override = SubResource("StandardMaterial3D_8tlni")
+transparency = 0.93
+mesh = SubResource("QuadMesh_lau0a")
+
+[node name="platito" type="CSGBox3D" parent="."]
+transform = Transform3D(0.01, 0, -2.90511e-13, 0, 0.247, 0, 2.13163e-14, 0, 0.409, 0.00163161, -0.0384173, -4.18826)
+calculate_tangents = false
+material = ExtResource("2_7v0wa")
+
+[node name="platito2" type="CSGBox3D" parent="."]
+transform = Transform3D(7.43094e-10, 0.353, -4.37987e-08, 0.017, -1.54301e-08, 4.62033e-21, -6.4956e-17, -3.08589e-08, -0.501, -3.68076e-07, -0.0356436, -4.21159)
+lod_bias = 128.0
+snap = 1.0
+material = ExtResource("2_7v0wa")

@@ -2,22 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c4c8xvhkdl0xd"
-path.s3tc="res://.godot/imported/Desk.png-803d9d8f0ce855648da637fdf207b191.s3tc.ctex"
-path.etc2="res://.godot/imported/Desk.png-803d9d8f0ce855648da637fdf207b191.etc2.ctex"
+uid="uid://docsje0mc4177"
+path="res://.godot/imported/nubes.png-56afe405266f9ac66d12dc887f8c8f23.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc", "etc2_astc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Desk.png"
-dest_files=["res://.godot/imported/Desk.png-803d9d8f0ce855648da637fdf207b191.s3tc.ctex", "res://.godot/imported/Desk.png-803d9d8f0ce855648da637fdf207b191.etc2.ctex"]
+source_file="res://Sprites/nubes.png"
+dest_files=["res://.godot/imported/nubes.png-56afe405266f9ac66d12dc887f8c8f23.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

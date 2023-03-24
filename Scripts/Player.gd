@@ -20,6 +20,8 @@ func _physics_process(_delta):
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 	
+	print(direction)
+	
 	if(velocity.x > 0):
 		_sprite.flip_h = false
 	elif(velocity.x < 0):
@@ -31,9 +33,18 @@ func _physics_process(_delta):
 		is_moving = false
 	
 	if(is_moving):
-		_animation_player.play("walk")
+		
+		if(direction.z == 1):
+			_animation_player.play("walk_afar_camera")
+		elif(direction.z == -1):
+			_animation_player.play("walk_towards_camera")
+		elif(direction.x != 0):
+			_animation_player.play("walk")
 	else:
 		_animation_player.play("idle")
+	
+	
+	
 	
 	move_and_slide()
 

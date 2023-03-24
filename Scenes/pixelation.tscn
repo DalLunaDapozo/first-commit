@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://cu2xh0isje1yr"]
+
+[ext_resource type="Shader" uid="uid://diq0lgcot117f" path="res://Materials/pixelation.tres" id="1_u8d75"]
+[ext_resource type="Texture2D" uid="uid://bbhj1tkuuwapw" path="res://addons/dialogic/Example Assets/backgrounds/vn-background-1.png" id="2_irlny"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_syc8i"]
+shader = ExtResource("1_u8d75")
+shader_parameter/Pixelisation = 256.0
+
+[node name="Pixelation" type="Sprite2D"]
+material = SubResource("ShaderMaterial_syc8i")
+position = Vector2(576, 324)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_irlny")

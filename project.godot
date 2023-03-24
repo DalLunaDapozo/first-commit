@@ -18,6 +18,7 @@ config/features=PackedStringArray("4.0", "Forward Plus")
 
 Dialogic="*res://addons/dialogic/Other/DialogicGameHandler.gd"
 DialogueManager="*res://Scripts/DialogueManager.gd"
+Global="*res://Scripts/global.gd"
 
 [dialogic]
 
@@ -25,14 +26,14 @@ editor/character_preview_mode=1
 editor/current_editor=&"Timeline Editor"
 editor/current_resources={
 "Character Editor": "res://Dialogues/hotel_manager.dch",
-"Timeline Editor": "res://Dialogues/test_timeline.dtl"
+"Timeline Editor": "res://Dialogues/hotel_manager_1.dtl"
 }
-editor/last/resources=["res://test_timeline.dtl", "res://Dialogues/player.dch", "res://Dialogues/hotel_manager.dch", "res://Dialogues/test_timeline.dtl"]
-editor/visual_timeline_editor_sidebar=200.0
+editor/last/resources=[]
+editor/visual_timeline_editor_sidebar=120.0
 animations/join_default_length=0.5
 animations/leave_default_length=0.5
-animations/leave_default_wait=true
-animations/join_default_wait=true
+animations/leave_default_wait=false
+animations/join_default_wait=false
 choices/autofocus_first=true
 choices/delay=0.2
 history/history_system=true
@@ -45,8 +46,24 @@ text/autocontinue_delay=1.0
 variables={}
 layout/mode=0
 glossary/default_case_sensitive=true
-editor/current_timeline_path="res://Dialogues/test_timeline.dtl"
+editor/current_timeline_path="res://Dialogues/hotel_manager_1.dtl"
 editor/timeline_editor_mode=0
+editor/Color2=Color(0.184314, 0.729412, 0.478431, 1)
+text/input_action="action"
+layout/export_overrides={
+"text_alignment": "1"
+}
+editor/layout/mode=2
+layout_scene="res://addons/dialogic/Events/DefaultLayouts/Default/DialogicDefaultLayout.tscn"
+editor/custom_testing_layout="res://addons/dialogic/Events/DefaultLayouts/Default/DialogicDefaultLayout.tscn"
+choices/hotkey_behaviour=0
+text/autocolor_names=false
+
+[display]
+
+window/size/window_width_override=1152
+window/size/window_height_override=648
+window/stretch/mode="viewport"
 
 [editor_plugins]
 
@@ -96,4 +113,6 @@ dialogic_default_action={
 
 [rendering]
 
+textures/vram_compression/import_etc2_astc=true
+lights_and_shadows/directional_shadow/soft_shadow_filter_quality=3
 textures/canvas_textures/default_texture_filter=0

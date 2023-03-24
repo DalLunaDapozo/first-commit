@@ -2,21 +2,21 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ckxogynsa5v8u"
-path="res://.godot/imported/Player_walk-Sheet.png-0f9e1abdcfe9abf86cf9bb9324a52e69.ctex"
+uid="uid://dmyb3cu8whqgm"
+path="res://.godot/imported/Lamp.png-b375e07066fd77238b207537dfc60be3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Player_walk-Sheet.png"
-dest_files=["res://.godot/imported/Player_walk-Sheet.png-0f9e1abdcfe9abf86cf9bb9324a52e69.ctex"]
+source_file="res://Sprites/Lamp.png"
+dest_files=["res://.godot/imported/Lamp.png-b375e07066fd77238b207537dfc60be3.ctex"]
 
 [params]
 
 compress/mode=0
-compress/high_quality=true
+compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0

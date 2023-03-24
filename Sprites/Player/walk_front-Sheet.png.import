@@ -2,22 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c4c8xvhkdl0xd"
-path.s3tc="res://.godot/imported/Desk.png-803d9d8f0ce855648da637fdf207b191.s3tc.ctex"
-path.etc2="res://.godot/imported/Desk.png-803d9d8f0ce855648da637fdf207b191.etc2.ctex"
+uid="uid://bq12ycpm4q28i"
+path="res://.godot/imported/walk_front-Sheet.png-07e9f7faa5877025e73d59491d46e55a.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc", "etc2_astc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Desk.png"
-dest_files=["res://.godot/imported/Desk.png-803d9d8f0ce855648da637fdf207b191.s3tc.ctex", "res://.godot/imported/Desk.png-803d9d8f0ce855648da637fdf207b191.etc2.ctex"]
+source_file="res://Sprites/Player/walk_front-Sheet.png"
+dest_files=["res://.godot/imported/walk_front-Sheet.png-07e9f7faa5877025e73d59491d46e55a.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

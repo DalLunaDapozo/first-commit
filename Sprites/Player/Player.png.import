@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bnxhufat6iqgo"
-path="res://.godot/imported/wall_normal_map.jpg-42b927286c329281fe632c8bf1be995d.ctex"
+uid="uid://df2w14ojs2asu"
+path="res://.godot/imported/Player.png-4323daa4a8c0f70026098f60b2e26bf9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Materials/wall_normal_map.jpg"
-dest_files=["res://.godot/imported/wall_normal_map.jpg-42b927286c329281fe632c8bf1be995d.ctex"]
+source_file="res://Sprites/Player/Player.png"
+dest_files=["res://.godot/imported/Player.png-4323daa4a8c0f70026098f60b2e26bf9.ctex"]
 
 [params]
 
@@ -19,13 +19,13 @@ compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
-compress/normal_map=1
+compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
-roughness/mode=1
-roughness/src_normal="res://Materials/wall_normal_map.jpg"
-process/fix_alpha_border=false
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
 process/premult_alpha=false
 process/normal_map_invert_y=false
 process/hdr_as_srgb=false

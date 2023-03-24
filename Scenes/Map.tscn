@@ -1,0 +1,100 @@
+[gd_scene load_steps=11 format=3 uid="uid://bah04crxab4rq"]
+
+[ext_resource type="Script" path="res://Scripts/Map.gd" id="1_gyc5o"]
+[ext_resource type="Texture2D" uid="uid://cmyoywlmhv6wq" path="res://Sprites/Mapa.png" id="1_sneqk"]
+[ext_resource type="Texture2D" uid="uid://b6lw36cy45dqe" path="res://Sprites/house_icon.png" id="2_ebxfh"]
+[ext_resource type="Texture2D" uid="uid://twejgrgkd504" path="res://Sprites/house_icon_hover.png" id="2_hi3ga"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ox10t"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vao0r"]
+texture = ExtResource("2_hi3ga")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ebbpq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3eeby"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rfiq8"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_i64ai"]
+
+[node name="Map" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_gyc5o")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("1_sneqk")
+
+[node name="Hostel" type="Button" parent="."]
+layout_mode = 0
+offset_left = 737.0
+offset_top = 443.0
+offset_right = 812.0
+offset_bottom = 529.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ox10t")
+theme_override_styles/hover = SubResource("StyleBoxTexture_vao0r")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_ebbpq")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_3eeby")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_rfiq8")
+icon = ExtResource("2_ebxfh")
+expand_icon = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Hostel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -30.5
+offset_right = 30.5
+offset_bottom = 23.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/focus = SubResource("StyleBoxTexture_i64ai")
+bbcode_enabled = true
+text = "HOSTEL"
+fit_content = true
+scroll_active = false
+shortcut_keys_enabled = false
+
+[node name="Confiteria" type="Button" parent="."]
+layout_mode = 0
+offset_left = 671.0
+offset_top = 253.0
+offset_right = 746.0
+offset_bottom = 339.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ox10t")
+theme_override_styles/hover = SubResource("StyleBoxTexture_vao0r")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_ebbpq")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_3eeby")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_rfiq8")
+icon = ExtResource("2_ebxfh")
+expand_icon = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Confiteria"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -44.5
+offset_top = -11.0
+offset_right = 49.5
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/focus = SubResource("StyleBoxTexture_i64ai")
+bbcode_enabled = true
+text = "CONFITERIA"
+fit_content = true
+scroll_active = false
+shortcut_keys_enabled = false
+
+[connection signal="pressed" from="Hostel" to="." method="_on_hostel_pressed"]
+[connection signal="pressed" from="Confiteria" to="." method="_on_confiteria_pressed"]

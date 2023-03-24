@@ -1,0 +1,65 @@
+[gd_scene load_steps=7 format=3 uid="uid://cbkl0cwtfpbe2"]
+
+[ext_resource type="Texture2D" uid="uid://dsmutojc3ict6" path="res://Sprites/azulejos.png" id="2_bfloe"]
+[ext_resource type="PackedScene" uid="uid://6kf4lp3vhinv" path="res://Scenes/player.tscn" id="3_qwjrh"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4oxj8"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gw1ng"]
+albedo_texture = ExtResource("2_bfloe")
+albedo_texture_force_srgb = true
+roughness = 0.59
+clearcoat_roughness = 0.65
+heightmap_scale = 2.617
+refraction_scale = -0.44
+uv1_scale = Vector3(6.998, 2.493, 2.496)
+uv1_triplanar = true
+texture_filter = 0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_6jv5p"]
+
+[sub_resource type="Environment" id="Environment_3kald"]
+ambient_light_color = Color(0.94902, 0.945098, 0.94902, 1)
+ambient_light_energy = 0.0
+tonemap_exposure = 1.27
+ssr_enabled = true
+ssr_fade_in = 0.332871
+ssr_fade_out = 1.86607
+ssr_depth_tolerance = 0.31
+ssao_enabled = true
+ssao_radius = 0.2
+ssao_intensity = 6.85
+ssao_power = 1.09806
+ssao_detail = 1.0
+ssao_horizon = 0.01
+ssao_sharpness = 0.38
+ssao_light_affect = 0.13
+ssao_ao_channel_affect = 0.08
+volumetric_fog_density = 0.0588
+volumetric_fog_emission = Color(0.847059, 0.847059, 0.847059, 1)
+volumetric_fog_emission_energy = 121.47
+adjustment_enabled = true
+adjustment_brightness = 0.93
+adjustment_saturation = 1.17
+
+[node name="Confiteria" type="Node3D"]
+
+[node name="Floor" type="MeshInstance3D" parent="."]
+transform = Transform3D(5, 0, 0, 0, 1, 0, 0, 0, 1.5, 0, 0, 0.5)
+material_override = SubResource("ShaderMaterial_4oxj8")
+material_overlay = SubResource("StandardMaterial3D_gw1ng")
+mesh = SubResource("PlaneMesh_6jv5p")
+
+[node name="Floor2" type="MeshInstance3D" parent="."]
+transform = Transform3D(5, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 1, 2)
+material_override = SubResource("ShaderMaterial_4oxj8")
+material_overlay = SubResource("StandardMaterial3D_gw1ng")
+mesh = SubResource("PlaneMesh_6jv5p")
+
+[node name="Player" parent="." instance=ExtResource("3_qwjrh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.66083, 0, -0.0663292)
+
+[node name="MainCamera" type="Camera3D" parent="Player"]
+transform = Transform3D(-1, 0, -1.50996e-07, -4.58149e-08, 0.952858, 0.303418, 1.43878e-07, 0.303418, -0.952858, 0.0303311, 1.30265, -2.34837)
+environment = SubResource("Environment_3kald")
+fov = 37.8493

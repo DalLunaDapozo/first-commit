@@ -1,0 +1,30 @@
+[gd_scene load_steps=2 format=3 uid="uid://dgouioilr202u"]
+
+[sub_resource type="Environment" id="Environment_3kald"]
+ambient_light_color = Color(0.94902, 0.945098, 0.94902, 1)
+ambient_light_energy = 0.0
+tonemap_exposure = 1.27
+ssr_enabled = true
+ssr_fade_in = 0.332871
+ssr_fade_out = 1.86607
+ssr_depth_tolerance = 0.31
+ssao_enabled = true
+ssao_radius = 0.2
+ssao_intensity = 6.85
+ssao_power = 1.09806
+ssao_detail = 1.0
+ssao_horizon = 0.01
+ssao_sharpness = 0.38
+ssao_light_affect = 0.13
+ssao_ao_channel_affect = 0.08
+volumetric_fog_density = 0.0588
+volumetric_fog_emission = Color(0.847059, 0.847059, 0.847059, 1)
+volumetric_fog_emission_energy = 121.47
+adjustment_enabled = true
+adjustment_brightness = 0.93
+adjustment_saturation = 1.17
+
+[node name="MainCamera" type="Camera3D"]
+transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 0, 0.816, -4.028)
+environment = SubResource("Environment_3kald")
+fov = 28.5

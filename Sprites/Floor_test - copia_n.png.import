@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bnxhufat6iqgo"
-path="res://.godot/imported/wall_normal_map.jpg-42b927286c329281fe632c8bf1be995d.ctex"
+uid="uid://dybgcywj0rp5w"
+path="res://.godot/imported/Floor_test - copia_n.png-77444ffc03d5f12d4989c2663fdd8a6f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Materials/wall_normal_map.jpg"
-dest_files=["res://.godot/imported/wall_normal_map.jpg-42b927286c329281fe632c8bf1be995d.ctex"]
+source_file="res://Sprites/Floor_test - copia_n.png"
+dest_files=["res://.godot/imported/Floor_test - copia_n.png-77444ffc03d5f12d4989c2663fdd8a6f.ctex"]
 
 [params]
 
@@ -20,12 +20,12 @@ compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=1
-compress/channel_pack=0
-mipmaps/generate=true
+compress/channel_pack=1
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=1
-roughness/src_normal="res://Materials/wall_normal_map.jpg"
-process/fix_alpha_border=false
+roughness/src_normal="res://Sprites/Floor_test - copia_n.png"
+process/fix_alpha_border=true
 process/premult_alpha=false
 process/normal_map_invert_y=false
 process/hdr_as_srgb=false

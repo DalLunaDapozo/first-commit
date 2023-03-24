@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bnxhufat6iqgo"
-path="res://.godot/imported/wall_normal_map.jpg-42b927286c329281fe632c8bf1be995d.ctex"
+uid="uid://wd2cut6wlhtt"
+path="res://.godot/imported/Player_n.png-27533c31e04ac1d4966392c90c7390a0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Materials/wall_normal_map.jpg"
-dest_files=["res://.godot/imported/wall_normal_map.jpg-42b927286c329281fe632c8bf1be995d.ctex"]
+source_file="res://Sprites/Player/Player_n.png"
+dest_files=["res://.godot/imported/Player_n.png-27533c31e04ac1d4966392c90c7390a0.ctex"]
 
 [params]
 
@@ -24,8 +24,8 @@ compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=1
-roughness/src_normal="res://Materials/wall_normal_map.jpg"
-process/fix_alpha_border=false
+roughness/src_normal="res://Sprites/Player/Player_n.png"
+process/fix_alpha_border=true
 process/premult_alpha=false
 process/normal_map_invert_y=false
 process/hdr_as_srgb=false
